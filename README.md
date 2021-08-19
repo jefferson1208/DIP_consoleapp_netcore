@@ -82,4 +82,4 @@ class Program
 
 
 ## 5 - Concluíndo
-Tudo certo. Agora qualquer serviço que precise utilizar na sua aplicação, basta registrá-lo na <b>Setup</b> (Item 2).
+Tudo certo 😃. Agora qualquer serviço que precise utilizar na sua aplicação, basta registrá-lo na <b>Setup</b> (Item 2).
