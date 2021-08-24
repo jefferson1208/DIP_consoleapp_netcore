@@ -4,8 +4,8 @@
 ## 1 - Pacotes
 
 ```bash
-Install-Package Microsoft.Extensions.DependencyInjection -version 3.1.1
-Install-Package Microsoft.Extensions.DependencyInjection.Abstractions -version 3.1.1
+Install-Package Microsoft.Extensions.DependencyInjection
+Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
 
 ```
 
