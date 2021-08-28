@@ -16,7 +16,7 @@ public static class Setup
     {
         public static void ConfigServices(this IServiceCollection services)
         {
-            services.AddSingleton<App>();
+            services.AddSingleton<IApp, App>();
             services.AddSingleton<INotificador, Notificador>();
             services.AddSingleton<IEmail, Email>();
         }
@@ -52,7 +52,7 @@ class Program
     {
         private readonly IServiceCollection _services;
         private IServiceProvider _provider;
-        private App _app;
+        private IApp _app;
         
         public Program()
         {
@@ -74,7 +74,7 @@ class Program
             _services.ConfigServices();
             _provider = _services.BuildServiceProvider();
 
-            _app = _provider.GetService<App>();
+            _app = _provider.GetService<IApp>();
         }
     }
 ```
