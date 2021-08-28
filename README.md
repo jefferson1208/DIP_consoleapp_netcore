@@ -5,7 +5,6 @@
 
 ```bash
 Install-Package Microsoft.Extensions.DependencyInjection
-Install-Package Microsoft.Extensions.DependencyInjection.Abstractions
 
 ```
 
