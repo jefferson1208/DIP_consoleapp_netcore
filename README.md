@@ -27,7 +27,7 @@ public static class Setup
 
 Crie uma classe que será a porta de entrada da sua aplicação. Esta classe já pode receber injeções conforme configuração no método acima. Exemplo:
 ```csharp
-public class App
+public class App : IApp
     {
         private readonly INotificador _notificador;
         private readonly IEmail _email;
