@@ -7,7 +7,7 @@ namespace DIP_consoleapp_netcore.App.Config
     {
         public static void ConfigServices(this IServiceCollection services)
         {
-            services.AddSingleton<App>();
+            services.AddSingleton<IApp, App>();
             services.AddSingleton<INotificador, Notificador>();
             services.AddSingleton<IEmail, Email>();
         }

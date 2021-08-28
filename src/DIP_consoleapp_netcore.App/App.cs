@@ -3,7 +3,7 @@ using System;
 
 namespace DIP_consoleapp_netcore.App
 {
-    public class App
+    public class App : IApp
     {
         private readonly INotificador _notificador;
         private readonly IEmail _email;

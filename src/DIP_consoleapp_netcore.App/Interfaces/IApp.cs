@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DIP_consoleapp_netcore.App.Interfaces
 {
-    interface IApp
+    public interface IApp
     {
+        void Iniciar();
     }
 }

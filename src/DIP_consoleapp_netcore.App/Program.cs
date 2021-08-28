@@ -1,4 +1,5 @@
 ﻿using DIP_consoleapp_netcore.App.Config;
+using DIP_consoleapp_netcore.App.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 
@@ -8,7 +9,7 @@ namespace DIP_consoleapp_netcore.App
     {
         private readonly IServiceCollection _services;
         private IServiceProvider _provider;
-        private App _app;
+        private IApp _app;
         public Program()
         {
             _services = new ServiceCollection();
@@ -29,7 +30,7 @@ namespace DIP_consoleapp_netcore.App
             _services.ConfigServices();
             _provider = _services.BuildServiceProvider();
 
-            _app = _provider.GetService<App>();
+            _app = _provider.GetService<IApp>();
         }
     }
 }
