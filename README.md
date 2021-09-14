@@ -4,7 +4,7 @@
 ## 1 - Pacotes
 
 ```bash
-Install-Package Microsoft.Extensions.DependencyInjection
+Install-Package Microsoft.Extensions.Hosting
 
 ```
 
@@ -48,35 +48,25 @@ public class App : IApp
 
 Esta classe passa a servir apenas como configuração da inicialização da sua aplicação. Exemplo:
 ```csharp
-class Program
-    {
-        private readonly IServiceCollection _services;
-        private IServiceProvider _provider;
-        private IApp _app;
-        
-        public Program()
-        {
-            _services = new ServiceCollection();
-        }
-        static void Main(string[] args)
-        {
-            new Program().IniciarPrograma();
-        }
+class Program 
+{
 
-        private void IniciarPrograma()
-        {
-            Config();
+   static void Main(string[] args) 
+   {
+      var host = CreateHost(args).Build();
+      host.Services.GetRequiredService<IApp>().Iniciar();
 
-            _app.Iniciar();
-        }
-        private void Config()
-        {
-            _services.ConfigServices();
-            _provider = _services.BuildServiceProvider();
-
-            _app = _provider.GetService<IApp>();
-        }
-    }
+   }
+   
+   private static IHostBuilder CreateHost(string[] args) 
+   {
+      return Host.CreateDefaultBuilder(args)
+         .ConfigureServices(services => 
+         {
+            services.ConfigServices();
+         });
+   }
+}
 ```
 
 
