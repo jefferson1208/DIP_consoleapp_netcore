@@ -10,12 +10,12 @@ namespace DIP_consoleapp_netcore.App
 
         static void Main(string[] args)
         {
-            var host = Config(args).Build();
+            var host = CreateHost(args).Build();
             host.Services.GetRequiredService<IApp>().Iniciar();
 
 
         }
-        private static IHostBuilder Config(string[] args)
+        private static IHostBuilder CreateHost(string[] args)
         {
             return Host.CreateDefaultBuilder(args)
                 .ConfigureServices(services =>
